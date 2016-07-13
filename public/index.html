@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>juke-pi</title>
+  </head>
+  <body>
+    <button type="button" id="play_button">Play</button>
+    <button type="button" id="pause_button">Pause</button>
+    <script>
+      var xhttp = new XMLHttpRequest();
+      var playButton = document.getElementById("play_button");
+      var pauseButton = document.getElementById("pause_button");
+      playButton.onclick = function() {
+        xhttp.open("GET", "play", true);
+        xhttp.send();
+      }
+      pauseButton.onclick = function() {
+        xhttp.open("GET", "pause", true);
+        xhttp.send();
+      }
+    </script>
+  </body>
+</html>
