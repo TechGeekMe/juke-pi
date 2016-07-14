@@ -1,5 +1,4 @@
-var multer = require('../helpers/multer-storage.js')
-var upload = multer()
+var upload = require('../helpers/multer-storage.js')
 var client = require('../helpers/mpd.js').client
 var cmd = require('../helpers/mpd.js').cmd
 module.exports = function(app) {
