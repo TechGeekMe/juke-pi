@@ -1,6 +1,6 @@
-var upload = require('../helpers/multer-storage.js')
-var client = require('../helpers/mpd.js').client
-var cmd = require('../helpers/mpd.js').cmd
+var multer = require('../helpers/multer-storage.js')
+var upload = multer()
+var client = require
 module.exports = function(app) {
     app.get('/play', function(req, res) {
         client.sendCommand(cmd("play", []), function(err, msg) {
