@@ -16,5 +16,6 @@ client.on('system-player', function() {
         console.log(msg);
     });
 });
-exports.client = client
-exports.cmd = cmd
+module.exports = mpd
+module.exports.client = client
+module.exports.cmd = cmd
