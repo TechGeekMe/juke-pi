@@ -1,9 +1,9 @@
 var express = require('express')
-var mpd = require('../helpers/mpd.js')
-
+var client = require('../helpers/mpd.js')
+var cmd = require('mpd').cmd
 var admin = express.Router();
 admin.get('/play', function(req, res) {
-  mpd.client.sendCommand(mpd.cmd("play", []), function(err, msg) {
+  client.sendCommand(cmd("play", []), function(err, msg) {
       if (err) throw err;
       console.log(msg);
       res.send('playing');
@@ -11,7 +11,7 @@ admin.get('/play', function(req, res) {
 })
 
 admin.get('/pause', function(req, res) {
-  mpd.client.sendCommand(mpd.cmd("pause", []), function(err, msg) {
+  client.sendCommand(cmd("pause", []), function(err, msg) {
       if (err) throw err;
       console.log(msg);
       res.send('paused');
@@ -19,7 +19,7 @@ admin.get('/pause', function(req, res) {
 })
 
 admin.get('/stop', function(req, res) {
-  mpd.client.sendCommand(mpd.cmd("stop", []), function(err, msg) {
+  client.sendCommand(cmd("stop", []), function(err, msg) {
       if (err) throw err;
       console.log(msg);
       res.send('stop');
@@ -27,7 +27,7 @@ admin.get('/stop', function(req, res) {
 })
 
 admin.get('/next', function(req, res) {
-    mpd.client.sendCommand(mpd.cmd("next", []), function(err, msg) {
+    client.sendCommand(cmd("next", []), function(err, msg) {
         if (err) throw err;
         console.log(msg);
         res.send('playing next');
@@ -35,7 +35,7 @@ admin.get('/next', function(req, res) {
 });
 
 admin.get('/previous', function(req, res) {
-    mpd.client.sendCommand(mpd.cmd("previous", []), function(err, msg) {
+    client.sendCommand(cmd("previous", []), function(err, msg) {
         if (err) throw err;
         console.log(msg);
         res.send('playing previous');
@@ -43,7 +43,7 @@ admin.get('/previous', function(req, res) {
 });
 
 admin.get('/setvol/:vol', function(req, res) {
-    mpd.client.sendCommand(mpd.cmd("setvol", [req.params.vol]), function(err, msg) {
+    client.sendCommand(cmd("setvol", [req.params.vol]), function(err, msg) {
         if (err) throw err;
         console.log(msg);
         res.send('volume changed');

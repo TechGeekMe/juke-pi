@@ -2,11 +2,11 @@ var mongoose = require('mongoose');
 
 //defining the schema of the DB
 var SongSchema = mongoose.Schema({
-    filename: String,
+    file_path: String,
     name: String,
     artist: String,
-    votes: Number,
-    users_voted: [String],
+    votes: {type: Number, default: 0},
+    users_voted: [String]
 });
 
 SongSchema.statics.insertSong = function(song, callback)  {
@@ -14,11 +14,10 @@ SongSchema.statics.insertSong = function(song, callback)  {
     song.save(function(err, doc) {
         if(err) {
             console.log("error inserting song");
-            callback(err, doc);
-        } else {
-            console.log("New song inserted into DB");
-            callback(null, doc);
+            return callback(err, null);
         }
+        console.log("New song inserted into DB");
+        callback(null, doc);
     });
  }
 SongSchema.statics.upvoteSong = function(song, userId, callback) {

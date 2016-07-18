@@ -67,11 +67,11 @@
         var playButton = document.getElementById("play_button");
         var pauseButton = document.getElementById("pause_button");
         playButton.onclick = function() {
-            xhttp.open("GET", "play", true);
+            xhttp.open("GET", "admin/play", true);
             xhttp.send();
         }
         pauseButton.onclick = function() {
-            xhttp.open("GET", "pause", true);
+            xhttp.open("GET", "admin/pause", true);
             xhttp.send();
         }
     </script>

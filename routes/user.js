@@ -1,8 +1,9 @@
-var mpd = require('../helpers/mpd.js')
+var client = require('../helpers/mpd.js')
+var cmd = require('mpd').cmd
 module.exports = function(app) {
     //TODO Remove in production
     app.get('/command/:command', function(req, res) {
-        mpd.client.sendCommand(mpd.cmd(req.params.command, []), function(err, msg) {
+        client.sendCommand(cmd(req.params.command, []), function(err, msg) {
             if (err) {
                 res.end(JSON.stringify(err))
             } else {
@@ -13,7 +14,7 @@ module.exports = function(app) {
     })
 
     app.get('/status', function(req, res) {
-        mpd.client.sendCommand("currentsong", function(err, msg) {
+        client.sendCommand("currentsong", function(err, msg) {
             if (err) throw err;
             var currentSongInfo = mpd.parseKeyValueMessage(msg)
             res.end(JSON.stringify(currentSongInfo));
