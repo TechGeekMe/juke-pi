@@ -20,34 +20,32 @@ SongSchema.statics.insertSong = function(song, callback)  {
         callback(null, doc);
     });
  }
-SongSchema.statics.upvoteSong = function(song, userId, callback) {
-    var id = song._id;
-    song.votes = song.votes+1
-    song.users_voted.push(userId)
-    var query = {id: id}
-    this.update(query, student, function(err, numAffected)  {
+SongSchema.statics.upvoteSong = function(songId, userId, callback) {
+    this.findOneAndUpdate({_id: songId, users_voted: {$nin: [userId]}}, { $inc: { votes: 1 }, $push: { users_voted: userId} }, function(err, doc) {
         if(err) {
             console.log("Error Upvoting song in DB");
-            callback(err, null)
-        }else {
-            console.log("song upvoted in db");
-            callback(null, numAffected)
+            return callback(err, null)
         }
-    });
+        console.log("song upvoted in db");
+        return callback(null, doc)
+    })
+
 }
-SongSchema.statics.songCompleted = function(song, callback) {
-    var id = song._id;
-    song.votes = 0
-    song.users_voted = []
-    var query = {id: id}
-    this.update(query, student, function(err, numAffected)  {
+SongSchema.statics.songCompleted = function(songId, callback) {
+    this.findOneAndUpdate({_id: songId}, {votes: 0 , users_voted : [] }, function(err, doc) {
         if(err) {
             console.log("Error clearing song in DB");
-            callback(err, null)
-        }else {
-            console.log("song cleared in db");
-            callback(null, numAffected)
+            return callback(err, null)
         }
+        console.log("song cleared in db");
+        return callback(null, doc)
+
     });
+}
+
+SongSchema.statics.nextSong = function(callback) {
+    this.findOne().sort({votes: -1}).exec(function(err, doc) {
+        callback(err, doc);
+    })
 }
 module.exports = mongoose.model('Song', SongSchema);
