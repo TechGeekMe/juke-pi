@@ -20,27 +20,7 @@ function playerCallback() {
             if (err) throw err;
             var msgPairs = mpd.parseKeyValueMessage(msg)
             console.log(JSON.stringify(msgPairs))
-            if (msgPairs.state == 'stop') {
-                Song.nextSong(function(err, doc) {
-                    if (err) {
-                        mutex.unlock();
-                        throw(err)
-                    }
-                    client.sendCommand(cmd("add", [doc.file_path]), function(err, msg) {
-                        if (err) {
-                            mutex.unlock();
-                            throw(err)
-                        }
-                        console.log("New song added to MPD");
-                        Song.songCompleted(doc._id, function(err, doc) {
-                            console.log("Song started" + doc)
-                            client.sendCommand(cmd("play", []), function(err, msg) {
-                                mutex.unlock();
-                            })
-                        })
-                    })
-                })
-            } else if (msgPairs.elapsed.startsWith('0.0') && msgPairs.state == 'pause') {
+            if (msgPairs.state == 'stop' || msgPairs.elapsed.startsWith('0.0') && msgPairs.state == 'pause') {
                 Song.nextSong(function(err, doc) {
                     if (err) {
                         mutex.unlock();
