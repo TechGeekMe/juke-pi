@@ -14,26 +14,22 @@ module.exports = function(app) {
         console.log("file: " + req.file.path)
         console.log("name: " + req.file.originalname)
         var filePath = req.file.path
-        var updateCommand = cmd("update", [filePath]);
-        console.log(updateCommand)
-        mpdUpdateSync(filePath, function(err, msg) {
-            if (err) next(err);
-            var parser = mm(fs.createReadStream(filePath), function (err, metadata) {
-                if (err) {
-                    return next(err);
-                }
-                console.log(metadata);
-                var song = {
-                    file_path: filePath,
-                    name: metadata.title,
-                    artist: metadata.artist.join(', ')
-                }
-                Song.insertSong(song, function(err, doc) {
-                    if (err) return next(err)
-                    res.end('song inserted');
-                    client.playerCallback();
-                });
+
+        var parser = mm(fs.createReadStream(filePath), function (err, metadata) {
+            if (err) {
+                return next(err);
+            }
+            console.log(metadata);
+            var song = {
+                file_path: filePath,
+                name: metadata.title,
+                artist: metadata.artist.join(', ')
+            }
+            Song.insertSong(song, function(err, doc) {
+                if (err) return next(err)
+                res.end('song inserted');
+                client.playerCallback();
             });
-        })
+        });
     })
 }

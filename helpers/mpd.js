@@ -3,22 +3,32 @@ var mpd = require('mpd'),
     cmd = mpd.cmd
 var locks = require('locks');
 var mutex = locks.createMutex();
+var updateMutex = locks.createMutex();
 var client = mpd.connect({
     port: 6600,
     host: 'localhost',
 });
+var done = true;
 client.on('ready', function() {
-    console.log("ready");
     client.playerCallback();
+    console.log("ready");
 });
 client.on('system', function(name) {
     console.log("update", name);
 });
 client.on('system-database', function() {
-    console.log("database update done", name);
+    console.log("database update done");
 });
+client.on('database-update-complete', function() {
+    console.log('Database update complete');
+    updateMutex.unlock();
+})
 client.on('system-update', function() {
-    console.log("database update started / finished", name);
+    done = !done;
+    if (done) {
+        client.emit('database-update-complete');
+    }
+    console.log("database update started / finished");
 });
 client.playerCallback = function() {
     mutex.lock(function() {
@@ -38,19 +48,27 @@ client.playerCallback = function() {
                     }
                     console.log(JSON.stringify(doc));
                     console.log('FILE!!!:' + doc.file_path)
-                    client.sendCommand(cmd("add", [doc.file_path]), function(err, msg) {
-                        if (err) {
-                            mutex.unlock();
-                            throw(err)
-                        }
-                        console.log("New song added to MPD");
-                        Song.songCompleted(doc._id, function(err, doc) {
-                            console.log("Song started" + doc)
-                            client.sendCommand(cmd("play", []), function(err, msg) {
-                                mutex.unlock();
+                    updateMutex.lock(function(){
+                        client.sendCommand(cmd("update", [doc.file_path]), function(err, msg) {
+                            updateMutex.lock(function() {
+                                client.sendCommand(cmd("add", [doc.file_path]), function(err, msg) {
+                                    updateMutex.unlock();
+                                    if (err) {
+                                        mutex.unlock();
+                                        throw(err)
+                                    }
+                                    console.log("New song added to MPD");
+                                    Song.songCompleted(doc._id, function(err, doc) {
+                                        console.log("Song started" + doc)
+                                        client.sendCommand(cmd("play", []), function(err, msg) {
+                                            mutex.unlock();
+                                        })
+                                    })
+                                })
                             })
                         })
                     })
+
                 })
             } else {
                 mutex.unlock();

@@ -6,7 +6,10 @@ var SongSchema = mongoose.Schema({
     name: String,
     artist: String,
     votes: {type: Number, default: 0},
-    users_voted: [String]
+    users_voted: [String],
+},
+{
+    timestamps: true
 });
 
 SongSchema.statics.insertSong = function(song, callback)  {
@@ -32,9 +35,10 @@ SongSchema.statics.upvoteSong = function(songId, userId, callback) {
 
 }
 SongSchema.statics.songCompleted = function(songId, callback) {
-    this.findOneAndUpdate({_id: songId}, {votes: 0 , users_voted : [] }, function(err, doc) {
+    this.findOneAndUpdate({_id: songId}, {votes: 0 , users_voted : []}, function(err, doc) {
         if(err) {
             console.log("Error clearing song in DB");
+            console.log(err);
             return callback(err, null)
         }
         console.log("song cleared in db");
@@ -44,7 +48,7 @@ SongSchema.statics.songCompleted = function(songId, callback) {
 }
 
 SongSchema.statics.nextSong = function(callback) {
-    this.findOne().sort({votes: -1}).exec(function(err, doc) {
+    this.findOne().sort([['votes', -1], ['updatedAt', 1]]).exec(function(err, doc) {
         callback(err, doc);
     })
 }
