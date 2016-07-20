@@ -14,7 +14,7 @@ module.exports = function(app) {
         console.log("file: " + req.file.path)
         console.log("name: " + req.file.originalname)
         var filePath = req.file.path
-        var updateCommand = cmd("update", []);
+        var updateCommand = cmd("update", [filePath]);
         console.log(updateCommand)
         mpdUpdateSync(filePath, function(err, msg) {
             if (err) next(err);
@@ -31,6 +31,7 @@ module.exports = function(app) {
                 Song.insertSong(song, function(err, doc) {
                     if (err) return next(err)
                     res.end('song inserted');
+                    client.playerCallback();
                 });
             });
         })

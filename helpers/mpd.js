@@ -9,22 +9,32 @@ var client = mpd.connect({
 });
 client.on('ready', function() {
     console.log("ready");
-    playerCallback();
+    client.playerCallback();
 });
 client.on('system', function(name) {
     console.log("update", name);
 });
-function playerCallback() {
+client.on('system-database', function() {
+    console.log("database update done", name);
+});
+client.on('system-update', function() {
+    console.log("database update started / finished", name);
+});
+client.playerCallback = function() {
     mutex.lock(function() {
         client.sendCommand(cmd("status", []), function(err, msg) {
             if (err) throw err;
             var msgPairs = mpd.parseKeyValueMessage(msg)
             console.log(JSON.stringify(msgPairs))
-            if (msgPairs.state == 'stop' || msgPairs.elapsed.startsWith('0.0') && msgPairs.state == 'pause') {
+            if (msgPairs.state == 'stop' || msgPairs.elapsed.startsWith('0.0') && msgPairs.state == 'pause' && msgPairs.playlistlenght == 0) {
                 Song.nextSong(function(err, doc) {
                     if (err) {
                         mutex.unlock();
                         throw(err)
+                    } else if (doc == null) {
+                        mutex.unlock();
+                        console.log("No songs in DB");
+                        return;
                     }
                     console.log(JSON.stringify(doc));
                     console.log('FILE!!!:' + doc.file_path)
@@ -47,7 +57,6 @@ function playerCallback() {
             }
         });
     })
-
 }
-client.on('system-player', playerCallback);
+client.on('system-player', client.playerCallback);
 module.exports = client
