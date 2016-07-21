@@ -1,0 +1,31 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/paper-card/paper-card.html">
+<link rel="import" href="bower_components/paper-button/paper-button.html">
+
+<dom-module id="song-card">
+    <template>
+        <paper-card heading="[[metadata.name]]">
+            <div class="card-content">
+                Artist: [[metadata.artist]]
+            </div>
+            <div class="card-actions">
+                <paper-button>Share</paper-button>
+                <paper-button>Explore!</paper-button>
+            </div>
+        </paper-card>
+    </template>
+    <script>
+        Polymer({
+            is: "song-card",
+
+            // add properties and methods on the element's prototype
+
+            properties: {
+                // declare properties for the element's public API
+                metadata: {
+                    type: Object,
+                }
+            }
+        });
+    </script>
+</dom-module>

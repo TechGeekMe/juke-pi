@@ -1,0 +1,27 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="song-card.html">
+<dom-module id="song-queue">
+    <template>
+        <iron-ajax url="song-data" last-response="{{songs}}" auto handle-as="json"></iron-ajax>
+        <div>[[songs.currentSong.Title]]</div>
+        <template is="dom-repeat" items="[[songs.queue]]">
+            <song-card metadata="[[item]]"></song-card>
+        </template>
+    </template>
+    <script>
+        Polymer({
+            is: "song-queue",
+
+            // add properties and methods on the element's prototype
+
+            properties: {
+                // declare properties for the element's public API
+                // greeting: {
+                //   type: String,
+                //   value: "Hello!"
+                // }
+            }
+        });
+    </script>
+</dom-module>
