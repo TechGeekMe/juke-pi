@@ -48,8 +48,10 @@ SongSchema.statics.songCompleted = function(songId, callback) {
 }
 
 SongSchema.statics.nextSong = function(callback) {
-    this.findOne().sort([['votes', -1], ['updatedAt', 1]]).exec(function(err, doc) {
-        callback(err, doc);
-    })
+    this.findOne().sort([['votes', -1], ['updatedAt', 1]]).exec(callback)
+}
+
+SongSchema.statics.fetchQueue = function(callback) {
+    this.find({}).sort([['votes', -1], ['updatedAt', 1]]).exec(callback)
 }
 module.exports = mongoose.model('Song', SongSchema);
