@@ -1,7 +1,31 @@
 var client = require('../helpers/mpd.js')
-var cmd = require('mpd').cmd
+var mpd = require('mpd')
+var cmd = mpd.cmd
 var Song = require('../models/song.js')
+var async = require('async')
+
 module.exports = function(app) {
+
+    app.get('song-data', function(req, res) {
+        async.parallel([
+            function(callback) {
+                client.sendCommand("currentsong", function(err, msg) {
+                    if (err) return callback(err, null);
+                    if (msg == '') {
+                        callback(null, 'no song')
+                    } else {
+                        var currentSongInfo = mpd.parseKeyValueMessage(msg)
+                        callback(null, currentSongInfo);
+                    }
+                })
+            },
+            function(callback) {
+                Song.fetchQueue(function(err, docs) {
+                    res.end(JSON.stringify(docs));
+                })
+            }
+        ])
+    })
     //TODO Remove in production
     app.get('/command/:command', function(req, res) {
         client.sendCommand(cmd(req.params.command, []), function(err, msg) {
@@ -14,22 +38,20 @@ module.exports = function(app) {
         })
     })
 
-    app.get('/status', function(req, res) {
-        client.sendCommand("currentsong", function(err, msg) {
-            if (err) throw err;
-            var currentSongInfo = mpd.parseKeyValueMessage(msg)
-            res.end(JSON.stringify(currentSongInfo));
-        })
+    app.get('/status', function(req, res, next) {
+
     })
-    //TODO Change to post
-    app.get('/upvote/:songId/:userId', function(req, res) {
-        //TODO Generate User ID through cookie
-        Song.upvoteSong(req.params.songId, req.params.userId, function(err, doc) {
+
+
+    app.get('/upvote/:songId', function(req, res) {
+
+        Song.upvoteSong(req.params.songId, req.session.id, function(err, doc) {
             console.log(doc);
             if (doc == null) {
                 res.end('already voted')
             }
             res.end(JSON.stringify(doc));
         })
+
     })
 }
