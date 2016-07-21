@@ -21,7 +21,11 @@ client.on('system-database', function() {
 });
 client.on('database-update-complete', function() {
     console.log('Database update complete');
-    updateMutex.unlock();
+    try {
+        updateMutex.unlock();
+    } catch (err) {
+        console.log('Update mutex already unlocked')
+    }
 })
 client.on('system-update', function() {
     done = !done;

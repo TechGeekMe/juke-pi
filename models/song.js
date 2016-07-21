@@ -5,7 +5,7 @@ var SongSchema = mongoose.Schema({
     file_path: String,
     name: String,
     artist: String,
-    votes: {type: Number, default: 0},
+    votes: {type: Number, default: 1},
     users_voted: [String],
 },
 {
