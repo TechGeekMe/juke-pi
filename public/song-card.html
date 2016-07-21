@@ -1,16 +1,38 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
 <link rel="import" href="bower_components/paper-card/paper-card.html">
 <link rel="import" href="bower_components/paper-button/paper-button.html">
-
+<link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
 <dom-module id="song-card">
+    <style>
+        :host {
+            display: block;
+            @apply(--paper-font-common-base);
+        }
+
+        paper-card {
+            width: 100%;
+            height: 100%
+        }
+
+        .card-actions {
+            position: absolute;
+            right: 0;
+            left: 0;
+            bottom: 0;
+        }
+
+        :root {
+            --paper-card-header-image: rgba(255, 0, 0, 0.5);
+        }
+    </style>
     <template>
-        <paper-card heading="[[metadata.name]]">
+        <paper-card heading="[[metadata.name]]" image="album.jpg">
             <div class="card-content">
                 Artist: [[metadata.artist]]
             </div>
             <div class="card-actions">
-                <paper-button>Share</paper-button>
-                <paper-button>Explore!</paper-button>
+                <paper-icon-button icon="thumb-up"></paper-icon-button>
+                [[metadata.votes]]
             </div>
         </paper-card>
     </template>
