@@ -6,7 +6,7 @@ var async = require('async')
 
 module.exports = function(app) {
 
-    app.get('song-data', function(req, res) {
+    app.get('/song-data', function(req, res) {
         async.parallel([
             function(callback) {
                 client.sendCommand("currentsong", function(err, msg) {
@@ -21,10 +21,13 @@ module.exports = function(app) {
             },
             function(callback) {
                 Song.fetchQueue(function(err, docs) {
-                    res.end(JSON.stringify(docs));
+                    if (err) return callback(err, null)
+                    callback(null, docs)
                 })
             }
-        ])
+        ], function(err, results) {
+            res.end(JSON.stringify({currentSong: results[0], queue: results[1]}));
+        })
     })
     //TODO Remove in production
     app.get('/command/:command', function(req, res) {
