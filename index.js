@@ -5,10 +5,12 @@ var app = express();
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(session({
-    cookie: { maxAge: 86400000 },
+    cookie: {
+        maxAge: 86400000
+    },
     secret: 'jukepi',
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: true
 }))
 routes(app)
 app.use(express.static('public'));

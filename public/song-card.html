@@ -78,7 +78,7 @@
             regularTap: function(e) {
                 //alert("upvote: "+ this.metadata._id)
                 var xhttp = new XMLHttpRequest();
-                var url = "/upvote/:" + this.metadata._id
+                var url = "/upvote/" + this.metadata._id
                 xhttp.open("GET", url, true);
                 xhttp.send();
             }

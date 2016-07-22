@@ -16,7 +16,7 @@ module.exports = function(app) {
         console.log("name: " + req.file.originalname)
         var filePath = req.file.path
 
-        var parser = mm(fs.createReadStream(filePath), function (err, metadata) {
+        var parser = mm(fs.createReadStream(filePath), function(err, metadata) {
             if (err) {
                 return next(err);
             }
