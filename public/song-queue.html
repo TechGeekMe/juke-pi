@@ -25,6 +25,7 @@
         iron-list {
             margin-top: 90px;
             padding-bottom: 16px;
+            height: 500px
         }
 
         paper-scroll-header-panel {
@@ -78,9 +79,7 @@
             margin: 8px;
             width: 200px;
             height: 250px;
-
         }
-
 
         song-card {
             width: 100%;
@@ -152,7 +151,7 @@
                     socket.on('upvote', function(data) {
                         var songIndex = self.findSongById(data.songId);
                         self.set('songs.queue.' + songIndex + '.votes', data.votes);
-                        self.songs.queue.sort(function(a,b) {
+                        self.songs.queue.sort(function(a, b) {
                             if (b.votes != a.votes) {
                                 return b.votes - a.votes
                             } else {
