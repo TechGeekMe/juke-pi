@@ -7,8 +7,8 @@ var fs = require('fs');
 var mm = require('musicmetadata');
 var Song = require('../models/song.js');
 module.exports = function(app) {
-    app.post('/upload-file', upload.single('myFile'), function(req, res, next) {
-        console.log(JSON.stringify(req));
+    app.post('/upload-file', upload.single('file'), function(req, res, next) {
+        console.log("uploading file");
         if (!req.file) {
             return next('no file uploaded')
         }

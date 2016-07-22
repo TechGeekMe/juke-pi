@@ -2,9 +2,15 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
 <link rel="import" href="bower_components/file-upload/file-upload.html">
 <dom-module id="upload-fab">
+    <style>
+        :root {
+            --paper-fab-keyboard-focus-background: var(--accent-color)
+        }
+    </style>
+
     <template>
-        <file-upload target="upload-file">
-            <paper-fab icon="add" title="upload"></paper-fab>
+        <file-upload target="/upload-file" accept=".mp3" method="POST" noink='true' progressHidden="true">
+            <paper-fab icon="add" title="upload" label="upload"></paper-fab>
         </file-upload>
     </template>
     <script>
