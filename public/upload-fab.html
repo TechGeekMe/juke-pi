@@ -1,0 +1,28 @@
+<link rel="import" href="bower_components/paper-fab/paper-fab.html">
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/file-upload/file-upload.html">
+<dom-module id="upload-fab">
+    <template>
+        <file-upload target="upload-file" >
+            <paper-fab icon="add" title="upload"></paper-fab>
+        </file-upload>
+    </template>
+    <script>
+        Polymer({
+            is: "upload-fab",
+            properties: {
+                // declare properties for the element's public API
+
+            },
+            // // add properties and methods on the element's prototype
+            // listeners: {
+            //     'tap': 'regularTap'
+            // },
+            // regularTap: function(e) {
+            //     alert("Thank you for tapping");
+            // }
+
+
+        });
+    </script>
+</dom-module>

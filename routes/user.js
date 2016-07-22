@@ -47,7 +47,7 @@ module.exports = function(app) {
 
 
     app.get('/upvote/:songId', function(req, res) {
-
+        console.log("songID:"+req.params.songId+" ,userID:"+ req.session.id)
         Song.upvoteSong(req.params.songId, req.session.id, function(err, doc) {
             console.log(doc);
             if (doc == null) {

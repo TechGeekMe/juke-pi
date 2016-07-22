@@ -71,6 +71,16 @@
                 metadata: {
                     type: Object,
                 }
+            },
+            listeners: {
+                tap: 'regularTap'
+            },
+            regularTap: function(e) {
+                //alert("upvote: "+ this.metadata._id)
+                var xhttp = new XMLHttpRequest();
+                var url = "/upvote/:" + this.metadata._id
+                xhttp.open("GET", url, true);
+                xhttp.send();
             }
         });
     </script>

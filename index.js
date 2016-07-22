@@ -4,7 +4,12 @@ var routes = require('./routes')
 var app = express();
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
-app.use(session({cookie: { maxAge: 86400000 }, secret: 'jukepi', resave: false, saveUninitialized: false}))
+app.use(session({
+    cookie: { maxAge: 86400000 },
+    secret: 'jukepi',
+    resave: false,
+    saveUninitialized: false
+}))
 routes(app)
 app.use(express.static('public'));
 app.listen(3000, function() {

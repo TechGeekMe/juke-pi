@@ -9,12 +9,19 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="import" href="song-queue.html">
+    <link rel="import" href="upload-fab.html">
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <style>
     body {
     margin: 0;
     background-color: #f6f6f6;
     font-family: 'Roboto', 'Noto', sans-serif;
+  }
+  upload-fab{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding: 25px;
   }
   </style>
 
@@ -23,6 +30,7 @@
 
 <body unresolved>
     <song-queue></song-queue>
+    <upload-fab></upload-fab>
 </body>
 
 </html>
