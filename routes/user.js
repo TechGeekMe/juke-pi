@@ -3,8 +3,8 @@ var mpd = require('mpd')
 var cmd = mpd.cmd
 var Song = require('../models/song.js')
 var async = require('async')
-
-module.exports = function(app) {
+var socket = require('../helpers/queue-socket');
+module.exports = function(app, io) {
 
     app.get('/song-data', function(req, res) {
             async.parallel([
@@ -54,8 +54,12 @@ module.exports = function(app) {
         Song.upvoteSong(req.params.songId, req.session.id, function(err, doc) {
             console.log(doc);
             if (doc == null) {
-                res.end('already voted')
+                return res.end('already voted')
             }
+            io.emit('upvote', {
+                songId: doc._id,
+                votes: doc.votes
+            })
             res.end(JSON.stringify(doc));
         })
 

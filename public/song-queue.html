@@ -14,6 +14,7 @@
 <link rel="import" href="bower_components/paper-styles/color.html">
 <link rel="import" href="bower_components/iron-image/iron-image.html">
 <link rel="import" href="song-card.html">
+<script src="bower_components/socket.io-client/socket.io.js"></script>
 <dom-module id="song-queue">
     <style>
         :host {
@@ -77,7 +78,9 @@
             margin: 8px;
             width: 200px;
             height: 250px;
+
         }
+
 
         song-card {
             width: 100%;
@@ -120,7 +123,8 @@
                 <template>
                     <div class="photoContainer">
                         <div class="photoContent">
-                            <song-card metadata="[[song]]"></song-card>
+                            <song-card metadata="{{song}}"></song-card>
+                            <!-- Votes: {{song.votes}} -->
                         </div>
                     </div>
                 </template>
@@ -135,6 +139,31 @@
                     //   type: String,
                     //   value: "Hello!"
                     // }
+                    songs: {
+                        type: Object,
+                        notify: true,
+                        reflectToAttribute: true
+
+                    }
+                },
+                ready: function() {
+                    var socket = io();
+                    var self = this;
+                    socket.on('upvote', function(data) {
+                        var songIndex = self.findSongById(data.songId);
+                        self.set('songs.queue.' + songIndex + '.votes', data.votes);
+                    })
+                    socket.on('new-upload', function(data) {
+                        console.log(data);
+                        self.push('songs.queue', data);
+                    })
+                },
+
+                findSongById: function(songId) {
+                    for (var i = 0; i < this.songs.queue.length; i++) {
+                        if (this.songs.queue[i]._id == songId) return i;
+                    }
+                    return null;
                 }
             }
 

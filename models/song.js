@@ -27,25 +27,28 @@ SongSchema.statics.insertSong = function(song, callback) {
 }
 SongSchema.statics.upvoteSong = function(songId, userId, callback) {
     this.findOneAndUpdate({
-        _id: songId,
-        users_voted: {
-            $nin: [userId]
-        }
-    }, {
-        $inc: {
-            votes: 1
+            _id: songId,
+            users_voted: {
+                $nin: [userId]
+            }
+        }, {
+            $inc: {
+                votes: 1
+            },
+            $push: {
+                users_voted: userId
+            }
+        }, {
+            new: true
         },
-        $push: {
-            users_voted: userId
-        }
-    }, function(err, doc) {
-        if (err) {
-            console.log("Error Upvoting song in DB");
-            return callback(err, null)
-        }
-        console.log("song upvoted in db");
-        return callback(null, doc)
-    })
+        function(err, doc) {
+            if (err) {
+                console.log("Error Upvoting song in DB");
+                return callback(err, null)
+            }
+            console.log("song upvoted in db");
+            return callback(null, doc)
+        })
 
 }
 SongSchema.statics.songCompleted = function(songId, callback) {

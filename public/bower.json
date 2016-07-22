@@ -21,6 +21,9 @@
     "paper-elements": "PolymerElements/paper-elements#^1.0.7",
     "app-elements": "PolymerElements/app-elements#^0.9.0",
     "iron-elements": "PolymerElements/iron-elements#^1.0.10",
-    "file-upload": "^1.7.5"
+    "file-upload": "^1.7.5",
+    "bower": "*",
+    "install": "^1.0.4",
+    "socket.io-client": "^1.4.8"
   }
 }

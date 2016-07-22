@@ -6,7 +6,8 @@ var mpdUpdateSync = require('../helpers/mpdupdatesync.js')
 var fs = require('fs');
 var mm = require('musicmetadata');
 var Song = require('../models/song.js');
-module.exports = function(app) {
+var socket = require('../helpers/queue-socket');
+module.exports = function(app, io) {
     app.post('/upload-file', upload.single('file'), function(req, res, next) {
         console.log("uploading file");
         if (!req.file) {
@@ -30,6 +31,7 @@ module.exports = function(app) {
                 if (err) return next(err)
                 res.end('song inserted');
                 client.playerCallback();
+                io.emit('new-upload', doc)
             });
         });
     })
