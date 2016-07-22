@@ -10,8 +10,10 @@ var SongSchema = mongoose.Schema({
         default: 1
     },
     users_voted: [String],
-}, {
-    timestamps: true
+    updatedAt: {
+        type: Date,
+        default: Date.now
+    }
 });
 
 SongSchema.statics.insertSong = function(song, callback) {
@@ -56,7 +58,8 @@ SongSchema.statics.songCompleted = function(songId, callback) {
         _id: songId
     }, {
         votes: 0,
-        users_voted: []
+        users_voted: [],
+        updatedAt: Date.now()
     }, function(err, doc) {
         if (err) {
             console.log("Error clearing song in DB");
