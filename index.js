@@ -25,6 +25,8 @@ var server = app.listen(3000, function() {
 });
 socket.createConnection(server);
 var io = socket.getConnection();
+var mpd = require('./helpers/mpd.js').io;
+mpd(io)
 io.on('connection', function(socket) {
     console.log("hello");
 })

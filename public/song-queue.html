@@ -151,18 +151,23 @@
                     socket.on('upvote', function(data) {
                         var songIndex = self.findSongById(data.songId);
                         self.set('songs.queue.' + songIndex + '.votes', data.votes);
-                        self.songs.queue.sort(function(a, b) {
-                            if (b.votes != a.votes) {
-                                return b.votes - a.votes
-                            } else {
-                                return Date.parse(a.updatedAt) - Date.parse(b.updatedAt)
-                            }
-                        })
+                        self.songs.queue.sort(self.compareFunction)
                         self.querySelector('iron-list').notifyResize();
                     })
                     socket.on('new-upload', function(data) {
-                        console.log(data);
+                        //console.log(data);
                         self.push('songs.queue', data);
+                        self.songs.queue.sort(self.compareFunction)
+                        self.querySelector('iron-list').notifyResize();
+                    })
+                    socket.on('new-song', function(data) {
+                        //console.log(data);
+                        var songIndex = self.findSongById(data._id);
+                        self.set('songs.queue.' + songIndex + '.votes', 0);
+                        self.songs.queue.sort(self.compareFunction)
+                        self.querySelector('iron-list').notifyResize();
+                        self.set('songs.currentSong.Title', data.name);
+                        self.set('songs.currentSong.Artist', data.artist);
                     })
                 },
 
@@ -171,6 +176,14 @@
                         if (this.songs.queue[i]._id == songId) return i;
                     }
                     return null;
+                },
+
+                compareFunction: function(a, b) {
+                    if (b.votes != a.votes) {
+                        return b.votes - a.votes
+                    } else {
+                        return Date.parse(a.updatedAt) - Date.parse(b.updatedAt)
+                    }
                 }
             }
 

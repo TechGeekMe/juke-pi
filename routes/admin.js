@@ -1,5 +1,5 @@
 var express = require('express')
-var client = require('../helpers/mpd.js')
+var client = require('../helpers/mpd.js').client
 var cmd = require('mpd').cmd
 var admin = express.Router();
 admin.get('/play', function(req, res) {

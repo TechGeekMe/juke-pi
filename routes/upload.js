@@ -1,5 +1,5 @@
 var upload = require('../helpers/multer-storage.js');
-var client = require('../helpers/mpd.js')
+var client = require('../helpers/mpd.js').client
 var mpd = require('mpd')
 var cmd = mpd.cmd
 var mpdUpdateSync = require('../helpers/mpdupdatesync.js')

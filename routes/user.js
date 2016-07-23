@@ -1,4 +1,4 @@
-var client = require('../helpers/mpd.js')
+var client = require('../helpers/mpd.js').client
 var mpd = require('mpd')
 var cmd = mpd.cmd
 var Song = require('../models/song.js')

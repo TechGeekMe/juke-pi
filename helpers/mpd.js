@@ -9,6 +9,12 @@ var client = mpd.connect({
     host: 'localhost',
 });
 var done = true;
+var io = null;
+module.exports = {
+    io: function(data) {
+        io = data;
+    }
+}
 client.on('ready', function() {
     client.playerCallback();
     console.log("ready");
@@ -44,22 +50,23 @@ client.playerCallback = function() {
                 Song.nextSong(function(err, doc) {
                     if (err) {
                         mutex.unlock();
-                        throw(err)
+                        throw (err)
                     } else if (doc == null) {
                         mutex.unlock();
                         console.log("No songs in DB");
                         return;
                     }
-                    console.log(JSON.stringify(doc));
+                    console.log("Emitting new song" + JSON.stringify(doc));
+                    io.emit("new-song", doc);
                     console.log('FILE!!!:' + doc.file_path)
-                    updateMutex.lock(function(){
+                    updateMutex.lock(function() {
                         client.sendCommand(cmd("update", [doc.file_path]), function(err, msg) {
                             updateMutex.lock(function() {
                                 client.sendCommand(cmd("add", [doc.file_path]), function(err, msg) {
                                     updateMutex.unlock();
                                     if (err) {
                                         mutex.unlock();
-                                        throw(err)
+                                        throw (err)
                                     }
                                     console.log("New song added to MPD");
                                     Song.songCompleted(doc._id, function(err, doc) {
@@ -81,4 +88,4 @@ client.playerCallback = function() {
     })
 }
 client.on('system-player', client.playerCallback);
-module.exports = client
+module.exports.client = client
