@@ -4,8 +4,8 @@ var storage = multer.diskStorage({
         cb(null, './uploads')
     },
     filename: function(req, file, cb) {
-        console.log("Encoding:" + file.encoding)
-        console.log("MIME:" + file.mimetype)
+        //console.log("Encoding:" + file.encoding)
+        //console.log("MIME:" + file.mimetype)
         filename = file.originalname
         if (file.mimetype === 'audio/mpeg' && !filename.endsWith('.mp3')) {
             filename = filename + '.mp3';

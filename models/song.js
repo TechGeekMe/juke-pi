@@ -20,10 +20,10 @@ SongSchema.statics.insertSong = function(song, callback) {
     var song = new this(song);
     song.save(function(err, doc) {
         if (err) {
-            console.log("error inserting song");
+            console.log("Insert new song: ".info + "fail".error + ":" + err.data);
             return callback(err, null);
         }
-        console.log("New song inserted into DB");
+        console.log("Insert new song: ".info + "Success".success + ":" + doc.name.data);
         callback(null, doc);
     });
 }
@@ -45,10 +45,10 @@ SongSchema.statics.upvoteSong = function(songId, userId, callback) {
         },
         function(err, doc) {
             if (err) {
-                console.log("Error Upvoting song in DB");
+                //console.log("Upvoting song: ".info + "fail".error +":"+ err.data);
                 return callback(err, null)
             }
-            console.log("song upvoted in db");
+            //console.log("Upvoting song: ".info + "Success".success +": votes = ".data + doc.votes.data);
             return callback(null, doc)
         })
 
@@ -62,11 +62,11 @@ SongSchema.statics.songCompleted = function(songId, callback) {
         updatedAt: Date.now()
     }, function(err, doc) {
         if (err) {
-            console.log("Error clearing song in DB");
-            console.log(err);
+            console.log("Song complete: ".info + "fail".error + ":" + err.data)
+            //console.log(err);
             return callback(err, null)
         }
-        console.log("song cleared in db");
+        console.log("Song complete: ".info + "Success".success + ":" + doc.name.data)
         return callback(null, doc)
 
     });

@@ -9,19 +9,16 @@ var Song = require('../models/song.js');
 var socket = require('../helpers/queue-socket');
 module.exports = function(app, io) {
     app.post('/upload-file', upload.single('file'), function(req, res, next) {
-        console.log("uploading file");
         if (!req.file) {
             return next('no file uploaded')
         }
-        console.log("file: " + req.file.path)
-        console.log("name: " + req.file.originalname)
+        console.log("File upload: ".info + "Success".success + ":" +"path: ".data + req.file.path.verbose + " name:".data +  req.file.originalname.verbose)
         var filePath = req.file.path
-
         var parser = mm(fs.createReadStream(filePath), function(err, metadata) {
             if (err) {
                 return next(err);
             }
-            console.log(metadata);
+            //console.log(metadata);
             var song = {
                 file_path: filePath,
                 name: metadata.title,

@@ -1,0 +1,289 @@
+Jul 23 18:53 : client: [0] opened from 127.0.0.1:51842
+Jul 23 18:53 : alsa_mixer: Failed to read mixer for 'default detected output': no such mixer control: PCM
+Jul 23 18:53 : client: [0] closed
+Jul 23 18:53 : client: [1] opened from 127.0.0.1:51844
+Jul 23 18:53 : client: [1] closed
+Jul 23 18:53 : update: added /01 - Lost In The Echo.mp3
+Jul 23 18:53 : update: added /12 - Powerless.mp3
+Jul 23 18:53 : update: added /05 - I'll Be Gone.mp3
+Jul 23 18:53 : update: added /02 - In My Remains.mp3
+Jul 23 18:53 : update: added /09 - Skin To Bone.mp3
+Jul 23 18:53 : update: added /08 - Roads Untraveled.mp3
+Jul 23 18:53 : update: added /07 - Victimized.mp3
+Jul 23 18:53 : update: added /03 - Burn It Down.mp3
+Jul 23 18:53 : update: added /11 - Tinfoil.mp3
+Jul 23 18:53 : update: added /10 - Until It Breaks.mp3
+Jul 23 18:53 : update: added /04 - Lies Greed Misery.mp3
+Jul 23 18:53 : update: added /06 - Castle Of Glass.mp3
+Jul 23 18:53 : avahi: Service 'Music Player' successfully established.
+Jul 23 18:53 : client: [2] opened from 127.0.0.1:51846
+Jul 23 18:53 : errno: Failed to stat /home/hacker101/Programming/juke-pi/uploads/uploads: No such file or directory
+Jul 23 18:53 : db: No such directory
+Jul 23 18:53 : client: [2] closed
+Jul 23 18:53 : client: [0] opened from 127.0.0.1:51858
+Jul 23 18:53 : alsa_mixer: Failed to read mixer for 'default detected output': no such mixer control: PCM
+Jul 23 18:53 : client: [0] closed
+Jul 23 18:53 : client: [1] opened from 127.0.0.1:51860
+Jul 23 18:53 : client: [1] closed
+Jul 23 18:53 : avahi: Service 'Music Player' successfully established.
+Jul 23 18:53 : client: [2] opened from 127.0.0.1:51862
+Jul 23 18:53 : errno: Failed to stat /home/hacker101/Programming/juke-pi/uploads/uploads: No such file or directory
+Jul 23 18:53 : db: No such directory
+Jul 23 18:53 : client: [2] closed
+Jul 23 18:53 : client: [3] opened from 127.0.0.1:51870
+Jul 23 18:53 : client: [3] closed
+Jul 23 18:53 : client: [0] opened from 127.0.0.1:51874
+Jul 23 18:53 : alsa_mixer: Failed to read mixer for 'default detected output': no such mixer control: PCM
+Jul 23 18:53 : client: [0] closed
+Jul 23 18:53 : client: [1] opened from 127.0.0.1:51876
+Jul 23 18:53 : client: [1] closed
+Jul 23 18:53 : avahi: Service 'Music Player' successfully established.
+Jul 23 18:53 : client: [2] opened from 127.0.0.1:51878
+Jul 23 18:53 : errno: Failed to stat /home/hacker101/Programming/juke-pi/uploads/uploads: No such file or directory
+Jul 23 18:53 : db: No such directory
+Jul 23 18:53 : client: [2] closed
+Jul 23 18:54 : client: [3] opened from 127.0.0.1:51884
+Jul 23 18:54 : client: [3] closed
+Jul 23 18:54 : client: [4] opened from 127.0.0.1:51886
+Jul 23 18:54 : client: [4] closed
+Jul 23 18:54 : client: [5] opened from 127.0.0.1:51890
+Jul 23 18:54 : client: [5] closed
+Jul 23 18:54 : client: [6] opened from 127.0.0.1:51892
+Jul 23 18:54 : client: [6] closed
+Jul 23 18:54 : client: [7] opened from 127.0.0.1:51900
+Jul 23 18:54 : client: [7] closed
+Jul 23 18:54 : client: [0] opened from 127.0.0.1:51902
+Jul 23 18:54 : alsa_mixer: Failed to read mixer for 'default detected output': no such mixer control: PCM
+Jul 23 18:54 : client: [0] closed
+Jul 23 18:54 : client: [1] opened from 127.0.0.1:51904
+Jul 23 18:54 : client: [1] closed
+Jul 23 18:54 : avahi: Service 'Music Player' successfully established.
+Jul 23 18:54 : client: [2] opened from 127.0.0.1:51908
+Jul 23 18:54 : errno: Failed to stat /home/hacker101/Programming/juke-pi/uploads/uploads: No such file or directory
+Jul 23 18:54 : db: No such directory
+Jul 23 18:54 : client: [2] closed
+Jul 23 18:55 : client: [0] opened from 127.0.0.1:51942
+Jul 23 18:55 : client: [0] closed
+Jul 23 18:55 : client: [1] opened from 127.0.0.1:51944
+Jul 23 18:55 : client: [1] closed
+Jul 23 18:55 : avahi: Service 'Music Player' successfully established.
+Jul 23 18:55 : client: [2] opened from 127.0.0.1:51948
+Jul 23 18:55 : errno: Failed to stat /home/hacker101/Programming/juke-pi/uploads/uploads: No such file or directory
+Jul 23 18:55 : db: No such directory
+Jul 23 18:55 : client: [2] closed
+Jul 23 18:56 : avahi: Service 'Music Player' successfully established.
+Jul 23 18:56 : client: [0] opened from 127.0.0.1:51962
+Jul 23 18:56 : client: [0] closed
+Jul 23 18:56 : client: [1] opened from 127.0.0.1:51966
+Jul 23 18:56 : client: [1] closed
+Jul 23 18:57 : avahi: Service 'Music Player' successfully established.
+Jul 23 19:02 : avahi: Service 'Music Player' successfully established.
+Jul 23 19:02 : client: [0] opened from 127.0.0.1:52228
+Jul 23 19:02 : client: [1] opened from 127.0.0.1:52230
+Jul 23 19:02 : client: [1] closed
+Jul 23 19:02 : client: [0] closed
+Jul 23 19:02 : client: [2] opened from 127.0.0.1:52232
+Jul 23 19:02 : errno: Failed to stat /home/hacker101/Programming/juke-pi/uploads/uploads: No such file or directory
+Jul 23 19:02 : db: No such directory
+Jul 23 19:02 : client: [2] closed
+Jul 23 19:03 : avahi: Service 'Music Player' successfully established.
+Jul 23 19:03 : client: [0] opened from 127.0.0.1:52246
+Jul 23 19:03 : client: [0] closed
+Jul 23 19:03 : client: [1] opened from 127.0.0.1:52248
+Jul 23 19:03 : client: [1] closed
+Jul 23 19:03 : client: [2] opened from 127.0.0.1:52250
+Jul 23 19:03 : errno: Failed to stat /home/hacker101/Programming/juke-pi/uploads/uploads: No such file or directory
+Jul 23 19:03 : db: No such directory
+Jul 23 19:03 : client: [2] closed
+Jul 23 19:03 : avahi: Service 'Music Player' successfully established.
+Jul 23 19:03 : client: [0] opened from 127.0.0.1:52258
+Jul 23 19:03 : client: [0] closed
+Jul 23 19:03 : client: [1] opened from 127.0.0.1:52260
+Jul 23 19:03 : client: [1] closed
+Jul 23 19:03 : client: [2] opened from 127.0.0.1:52262
+Jul 23 19:03 : errno: Failed to stat /home/hacker101/Programming/juke-pi/uploads/uploads: No such file or directory
+Jul 23 19:03 : db: No such directory
+Jul 23 19:03 : client: [2] closed
+Jul 23 19:06 : avahi: Service 'Music Player' successfully established.
+Jul 23 19:10 : avahi: Service 'Music Player' successfully established.
+Jul 23 19:10 : client: [0] opened from 127.0.0.1:52524
+Jul 23 19:10 : client: [0] closed
+Jul 23 19:10 : client: [1] opened from 127.0.0.1:52526
+Jul 23 19:10 : client: [1] closed
+Jul 23 19:10 : client: [2] opened from 127.0.0.1:52530
+Jul 23 19:10 : errno: Failed to stat /home/hacker101/Programming/juke-pi/uploads/uploads: No such file or directory
+Jul 23 19:10 : db: No such directory
+Jul 23 19:10 : client: [2] closed
+Jul 23 19:10 : client: [0] opened from 127.0.0.1:52548
+Jul 23 19:10 : client: [0] closed
+Jul 23 19:10 : client: [1] opened from 127.0.0.1:52550
+Jul 23 19:10 : client: [1] closed
+Jul 23 19:10 : avahi: Service 'Music Player' successfully established.
+Jul 23 19:10 : client: [2] opened from 127.0.0.1:52552
+Jul 23 19:10 : errno: Failed to stat /home/hacker101/Programming/juke-pi/uploads/uploads: No such file or directory
+Jul 23 19:10 : db: No such directory
+Jul 23 19:10 : client: [2] closed
+Jul 23 19:13 : client: [0] opened from 127.0.0.1:52670
+Jul 23 19:13 : client: [0] closed
+Jul 23 19:13 : client: [1] opened from 127.0.0.1:52672
+Jul 23 19:13 : client: [1] closed
+Jul 23 19:13 : avahi: Service 'Music Player' successfully established.
+Jul 23 19:13 : client: [2] opened from 127.0.0.1:52674
+Jul 23 19:13 : errno: Failed to stat /home/hacker101/Programming/juke-pi/uploads/uploads: No such file or directory
+Jul 23 19:13 : db: No such directory
+Jul 23 19:13 : client: [2] closed
+Jul 23 19:14 : avahi: Service 'Music Player' successfully established.
+Jul 23 19:14 : client: [0] opened from 127.0.0.1:52698
+Jul 23 19:14 : client: [0] closed
+Jul 23 19:14 : client: [1] opened from 127.0.0.1:52700
+Jul 23 19:14 : client: [1] closed
+Jul 23 19:14 : avahi: Service 'Music Player' successfully established.
+Jul 23 19:14 : client: [2] opened from 127.0.0.1:52702
+Jul 23 19:14 : errno: Failed to stat /home/hacker101/Programming/juke-pi/uploads/uploads: No such file or directory
+Jul 23 19:14 : db: No such directory
+Jul 23 19:14 : client: [2] closed
+Jul 23 19:14 : client: [0] opened from 127.0.0.1:52712
+Jul 23 19:14 : client: [0] closed
+Jul 23 19:14 : client: [1] opened from 127.0.0.1:52714
+Jul 23 19:14 : client: [1] closed
+Jul 23 19:14 : avahi: Service 'Music Player' successfully established.
+Jul 23 19:14 : client: [2] opened from 127.0.0.1:52716
+Jul 23 19:15 : client: [2] closed
+Jul 23 19:15 : client: [0] opened from 127.0.0.1:52814
+Jul 23 19:15 : client: [0] closed
+Jul 23 19:15 : client: [1] opened from 127.0.0.1:52816
+Jul 23 19:15 : client: [1] closed
+Jul 23 19:15 : avahi: Service 'Music Player' successfully established.
+Jul 23 19:15 : client: [2] opened from 127.0.0.1:52820
+Jul 23 19:16 : errno: Failed to stat /home/hacker101/Programming/juke-pi/uploads/uploads: No such file or directory
+Jul 23 19:16 : db: No such directory
+Jul 23 19:16 : client: [2] closed
+Jul 23 19:16 : client: [0] opened from 127.0.0.1:52852
+Jul 23 19:16 : client: [0] closed
+Jul 23 19:16 : client: [1] opened from 127.0.0.1:52854
+Jul 23 19:16 : client: [1] closed
+Jul 23 19:16 : avahi: Service 'Music Player' successfully established.
+Jul 23 19:16 : client: [2] opened from 127.0.0.1:52858
+Jul 23 19:16 : errno: Failed to stat /home/hacker101/Programming/juke-pi/uploads/uploads: No such file or directory
+Jul 23 19:16 : db: No such directory
+Jul 23 19:16 : client: [2] closed
+Jul 23 19:17 : client: [0] opened from 127.0.0.1:52894
+Jul 23 19:17 : client: [0] closed
+Jul 23 19:17 : client: [1] opened from 127.0.0.1:52896
+Jul 23 19:17 : client: [1] closed
+Jul 23 19:17 : avahi: Service 'Music Player' successfully established.
+Jul 23 19:17 : client: [2] opened from 127.0.0.1:52898
+Jul 23 19:17 : update: added uploads/01 - Lost In The Echo.mp3
+Jul 23 19:18 : client: [3] opened from 127.0.0.1:52928
+Jul 23 19:18 : client: [3] closed
+Jul 23 19:18 : player: played "uploads/01 - Lost In The Echo.mp3"
+Jul 23 19:18 : update: added uploads/02 - In My Remains.mp3
+Jul 23 19:18 : client: [4] opened from 127.0.0.1:52934
+Jul 23 19:18 : client: [4] closed
+Jul 23 19:18 : player: played "uploads/02 - In My Remains.mp3"
+Jul 23 19:18 : client: [5] opened from 127.0.0.1:52936
+Jul 23 19:18 : client: [5] closed
+Jul 23 19:18 : player: played "uploads/01 - Lost In The Echo.mp3"
+Jul 23 19:18 : client: [6] opened from 127.0.0.1:52938
+Jul 23 19:18 : client: [6] closed
+Jul 23 19:18 : player: played "uploads/02 - In My Remains.mp3"
+Jul 23 19:18 : client: [7] opened from 127.0.0.1:52940
+Jul 23 19:18 : client: [7] closed
+Jul 23 19:18 : player: played "uploads/01 - Lost In The Echo.mp3"
+Jul 23 19:18 : client: [8] opened from 127.0.0.1:52942
+Jul 23 19:18 : client: [8] closed
+Jul 23 19:19 : client: [2] closed
+Jul 23 19:25 : player: played "uploads/01 - Lost In The Echo.mp3"
+Jul 23 19:25 : client: [0] opened from 127.0.0.1:53100
+Jul 23 19:25 : client: [0] closed
+Jul 23 19:25 : client: [1] opened from 127.0.0.1:53102
+Jul 23 19:25 : client: [1] closed
+Jul 23 19:25 : avahi: Service 'Music Player' successfully established.
+Jul 23 19:25 : client: [2] opened from 127.0.0.1:53106
+Jul 23 19:25 : update: updating uploads/01 - Lost In The Echo.mp3
+Jul 23 19:28 : player: played "uploads/01 - Lost In The Echo.mp3"
+Jul 23 19:32 : player: played "uploads/01 - Lost In The Echo.mp3"
+Jul 23 19:35 : player: played "uploads/01 - Lost In The Echo.mp3"
+Jul 23 19:38 : player: played "uploads/01 - Lost In The Echo.mp3"
+Jul 23 19:40 : client: [2] closed
+Jul 23 19:42 : player: played "uploads/01 - Lost In The Echo.mp3"
+Jul 23 19:43 : client: [0] opened from 127.0.0.1:53366
+Jul 23 19:43 : client: [0] closed
+Jul 23 19:43 : client: [1] opened from 127.0.0.1:53368
+Jul 23 19:43 : client: [1] closed
+Jul 23 19:43 : avahi: Service 'Music Player' successfully established.
+Jul 23 19:44 : client: [2] opened from 127.0.0.1:53372
+Jul 23 21:12 : client: [2] closed
+Jul 23 21:31 : client: [3] opened from 127.0.0.1:54226
+Jul 23 21:31 : client: [3] closed
+Jul 24 00:08 : avahi: Service 'Music Player' successfully established.
+Jul 24 00:08 : client: [0] opened from 127.0.0.1:54342
+Jul 24 00:08 : client: [0] closed
+Jul 24 00:08 : client: [1] opened from 127.0.0.1:54344
+Jul 24 00:08 : client: [1] closed
+Jul 24 00:08 : client: [2] opened from 127.0.0.1:54346
+Jul 24 00:10 : db: No such directory
+Jul 24 00:10 : client: [2] closed
+Jul 24 00:11 : client: [3] opened from 127.0.0.1:54358
+Jul 24 00:11 : db: No such directory
+Jul 24 00:11 : client: [3] closed
+Jul 24 00:11 : client: [4] opened from 127.0.0.1:54366
+Jul 24 00:12 : update: added uploads/05 - I'll Be Gone.mp3
+Jul 24 00:12 : client: [5] opened from 127.0.0.1:54402
+Jul 24 00:12 : client: [5] closed
+Jul 24 00:14 : client: [6] opened from 127.0.0.1:54404
+Jul 24 00:14 : client: [6] closed
+Jul 24 00:14 : player: played "uploads/05 - I'll Be Gone.mp3"
+Jul 24 00:14 : db: No such directory
+Jul 24 00:14 : client: [4] closed
+Jul 24 00:18 : client: [7] opened from 127.0.0.1:54512
+Jul 24 00:18 : db: No such directory
+Jul 24 00:18 : client: [7] closed
+Jul 24 00:21 : client: [8] opened from 127.0.0.1:54594
+Jul 24 00:21 : db: No such directory
+Jul 24 00:21 : client: [8] closed
+Jul 24 00:21 : client: [9] opened from 127.0.0.1:54612
+Jul 24 00:21 : db: No such directory
+Jul 24 00:21 : client: [9] closed
+Jul 24 00:21 : client: [10] opened from 127.0.0.1:54616
+Jul 24 00:21 : db: No such directory
+Jul 24 00:21 : client: [10] closed
+Jul 24 00:23 : client: [11] opened from 127.0.0.1:54674
+Jul 24 00:23 : client: [11] closed
+Jul 24 00:24 : avahi: Service 'Music Player' successfully established.
+Jul 24 00:24 : client: [0] opened from 127.0.0.1:54688
+Jul 24 00:24 : client: [0] closed
+Jul 24 00:24 : client: [1] opened from 127.0.0.1:54714
+Jul 24 00:24 : client: [1] closed
+Jul 24 00:25 : client: [2] opened from 127.0.0.1:54716
+Jul 24 00:25 : client: [2] closed
+Jul 24 00:25 : client: [3] opened from 127.0.0.1:54724
+Jul 24 00:25 : client: [3] closed
+Jul 24 00:25 : client: [4] opened from 127.0.0.1:54726
+Jul 24 00:25 : client: [4] closed
+Jul 25 00:43 : avahi: Service 'Music Player' successfully established.
+Jul 25 00:43 : client: [0] opened from 127.0.0.1:56370
+Jul 25 00:43 : client: [0] closed
+Jul 25 00:43 : client: [1] opened from 127.0.0.1:56372
+Jul 25 00:43 : client: [1] closed
+Jul 25 00:43 : client: [2] opened from 127.0.0.1:56374
+Jul 25 00:44 : client: [2] closed
+Jul 25 00:44 : client: [3] opened from 127.0.0.1:56382
+Jul 25 00:44 : update: added uploads/06 - Castle Of Glass.mp3
+Jul 25 00:45 : client: [3] closed
+Jul 25 00:45 : client: [4] opened from 127.0.0.1:56400
+Jul 25 00:45 : client: [4] closed
+Jul 25 00:52 : client: [5] opened from 127.0.0.1:56592
+Jul 25 00:52 : client: [5] closed
+Jul 25 00:53 : client: [6] opened from 127.0.0.1:56596
+Jul 25 00:53 : client: [7] opened from 127.0.0.1:56604
+Jul 25 00:53 : client: [7] closed
+Jul 25 00:53 : player: played "uploads/06 - Castle Of Glass.mp3"
+Jul 25 00:53 : update: added uploads/04 - Lies Greed Misery.mp3
+Jul 25 00:54 : client: [8] opened from 127.0.0.1:56608
+Jul 25 00:54 : client: [8] closed
+Jul 25 00:56 : client: [6] closed
+Jul 25 00:56 : client: [9] opened from 127.0.0.1:56622
+Jul 25 00:57 : client: [9] closed
+Jul 25 00:57 : client: [10] opened from 127.0.0.1:56636
+Jul 25 00:58 : client: [10] closed
