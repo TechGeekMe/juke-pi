@@ -46,7 +46,7 @@ client.playerCallback = function() {
             if (err) throw err;
             var msgPairs = mpd.parseKeyValueMessage(msg)
             console.log(JSON.stringify(msgPairs))
-            if (msgPairs.state == 'stop' || msgPairs.elapsed.startsWith('0.0') && msgPairs.state == 'pause' && msgPairs.playlistlenght == 0) {
+            if (msgPairs.state == 'stop' || msgPairs.elapsed.startsWith('0.0') && msgPairs.state == 'pause' && msgPairs.playlistlength == 0) {
                 Song.nextSong(function(err, doc) {
                     if (err) {
                         mutex.unlock();
