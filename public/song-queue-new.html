@@ -15,10 +15,10 @@
 <link rel="import" href="bower_components/iron-image/iron-image.html">
 <link rel="import" href="song-card.html">
 <script src="bower_components/socket.io-client/socket.io.js"></script>
-<dom-module id="song-queue">
+<dom-module id="song-queue-new">
     <style>
         :host {
-            display: block;
+            
             @apply(--paper-font-common-base);
         }
 
@@ -118,21 +118,20 @@
                 </div>
 
             </paper-toolbar>
-            <iron-list items="{{songs.queue}}" as="song" grid>
-                <template>
-                    <div class="photoContainer">
-                        <div class="photoContent">
-                            <song-card metadata="{{song}}"></song-card>
-                            <!-- Votes: {{song.votes}} -->
-                        </div>
+
+            <template is="dom-repeat" items="{{songs.queue}}" as="song">
+                <div class="photoContainer">
+                    <div class="photoContent">
+                        <song-card metadata="{{song}}"></song-card>
+                        <!-- Votes: {{song.votes}} -->
                     </div>
-                </template>
-            </iron-list>
-            </paper-scroll-header-panel>
+                </div>
+            </template>
+
     </template>
     <script>
         Polymer({
-                is: "song-queue", // add properties and methods on the element's prototype
+                is: "song-queue-new", // add properties and methods on the element's prototype
                 properties: {
                     // declare properties for the element's public API
                     // greeting: {
